@@ -3,9 +3,9 @@ package org.n8lm.math;
 import org.n8lm.math.Line;
 
 class LineSegment extends Line {
-	protected int Length;	
-	protected Point pointA;
-	protected Point pointB;
+	protected float Length;	
+	protected Vertex pointA;
+	protected Vertex pointB;
 	/**
 	 * Method LineSegment
 	 *
@@ -15,8 +15,8 @@ class LineSegment extends Line {
 		// TODO: Add your code here
 	}		
 		
-	public LineSegment(String name,Point a,Point b) {
-		base(name);
+	public LineSegment(String name,Vertex a,Vertex b) {
+		super(name);
 		pointA = a;
 		pointB = b;
 		// TODO: Add your code here

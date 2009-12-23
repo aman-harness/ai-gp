@@ -3,9 +3,10 @@ package org.n8lm.math;
 import org.n8lm.math.GeometryObject;
 
 class Angle extends GeometryObject {
-	protected Point Vertex;
-	protected Line LineA;
-	protected Line LineB;	
+	protected float angle;
+	protected Vertex vertex;
+	protected Line lineA;
+	protected Line lineB;	
 	/**
 	 * Method Angle
 	 *

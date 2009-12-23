@@ -1,7 +1,7 @@
 package org.n8lm.math;
 
 
-class GeometryObject {
+abstract class GeometryObject {
 	
 	/**
 	 * Method GeometryObject
