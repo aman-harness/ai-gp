@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project>
+	<settings>
+		<label>ai-gp</label>
+		<root_path>\</root_path>
+		<output_path>classes\</output_path>
+		<source_path>src\</source_path>
+		<jdkprofile_ref>JDK version 1.7.0</jdkprofile_ref>
+		<compiler_ref/>
+		<ant_ref/>
+	</settings>
+	<ant_events/>
+	<run_items/>
+	<runtimes>
+		<runtime>
+			<label>&lt;Default&gt;</label>
+			<application_ref/>
+			<applet_ref/>
+			<debugger_ref/>
+			<param/>
+			<run>Program</run>
+			<verify>true</verify>
+		</runtime>
+	</runtimes>
+	<libraries/>
+	<files>
+		<include>
+			<folderitem>
+				<path>src</path>
+			</folderitem>
+			<folderitem>
+				<path>src\org</path>
+			</folderitem>
+			<folderitem>
+				<path>src\org\n8lm</path>
+			</folderitem>
+			<folderitem>
+				<path>src\org\n8lm\math</path>
+			</folderitem>
+			<fileitem>
+				<path>src\Program.java</path>
+				<folder>src</folder>
+			</fileitem>
+			<fileitem>
+				<path>src\org\n8lm\math\Angle.java</path>
+				<folder>src\org\n8lm\math</folder>
+			</fileitem>
+			<fileitem>
+				<path>src\org\n8lm\math\GeometryObject.java</path>
+				<folder>src\org\n8lm\math</folder>
+			</fileitem>
+			<fileitem>
+				<path>src\org\n8lm\math\InfiniteLine.java</path>
+				<folder>src\org\n8lm\math</folder>
+			</fileitem>
+			<fileitem>
+				<path>src\org\n8lm\math\Line.java</path>
+				<folder>src\org\n8lm\math</folder>
+			</fileitem>
+			<fileitem>
+				<path>src\org\n8lm\math\LineSegment.java</path>
+				<folder>src\org\n8lm\math</folder>
+			</fileitem>
+			<fileitem>
+				<path>src\org\n8lm\math\Parallel.java</path>
+				<folder>src\org\n8lm\math</folder>
+			</fileitem>
+			<fileitem>
+				<path>src\org\n8lm\math\Radial.java</path>
+				<folder>src\org\n8lm\math</folder>
+			</fileitem>
+			<fileitem>
+				<path>src\org\n8lm\math\Vertex.java</path>
+				<folder>src\org\n8lm\math</folder>
+			</fileitem>
+		</include>
+	</files>
+	<tasks>
+		<todotaskitem>
+			<description>TODO: Add your code here</description>
+			<filepath>src\org\n8lm\math\GeometryObject.java</filepath>
+			<line>16</line>
+			<timestamp>1261542006</timestamp>
+		</todotaskitem>
+		<todotaskitem>
+			<description>TODO: Add your code here</description>
+			<filepath>src\org\n8lm\math\GeometryObject.java</filepath>
+			<line>20</line>
+			<timestamp>1261542006</timestamp>
+		</todotaskitem>
+		<todotaskitem>
+			<description>TODO: Add your code here</description>
+			<filepath>src\org\n8lm\math\Point.java</filepath>
+			<line>22</line>
+			<timestamp>1261542394</timestamp>
+		</todotaskitem>
+		<todotaskitem>
+			<description>TODO: Add your code here</description>
+			<filepath>src\org\n8lm\math\Point.java</filepath>
+			<line>26</line>
+			<timestamp>1261542394</timestamp>
+		</todotaskitem>
+		<todotaskitem>
+			<description>TODO: Add your code here</description>
+			<filepath>src\org\n8lm\math\LineSegment.java</filepath>
+			<line>17</line>
+			<timestamp>1261566146</timestamp>
+		</todotaskitem>
+		<todotaskitem>
+			<description>TODO: Add your code here</description>
+			<filepath>src\org\n8lm\math\LineSegment.java</filepath>
+			<line>24</line>
+			<timestamp>1261566146</timestamp>
+		</todotaskitem>
+		<todotaskitem>
+			<description>TODO: Add your code here</description>
+			<filepath>src\org\n8lm\math\InfiniteLine.java</filepath>
+			<line>15</line>
+			<timestamp>1261566528</timestamp>
+		</todotaskitem>
+		<todotaskitem>
+			<description>TODO: Add your code here</description>
+			<filepath>src\org\n8lm\math\Angle.java</filepath>
+			<line>18</line>
+			<timestamp>1261566874</timestamp>
+		</todotaskitem>
+		<todotaskitem>
+			<description>TODO: Add your code here</description>
+			<filepath>src\org\n8lm\math\Radial.java</filepath>
+			<line>17</line>
+			<timestamp>1261578692</timestamp>
+		</todotaskitem>
+		<todotaskitem>
+			<description>TODO: Add your code here</description>
+			<filepath>src\org\n8lm\math\Line.java</filepath>
+			<line>10</line>
+			<timestamp>1261579364</timestamp>
+		</todotaskitem>
+		<todotaskitem>
+			<description>TODO: Add your code here</description>
+			<filepath>src\org\n8lm\math\Line.java</filepath>
+			<line>15</line>
+			<timestamp>1261579364</timestamp>
+		</todotaskitem>
+		<todotaskitem>
+			<description>TODO, add your application code</description>
+			<filepath>src\Program.java</filepath>
+			<line>26</line>
+			<timestamp>1261581108</timestamp>
+		</todotaskitem>
+		<todotaskitem>
+			<description>TODO: Add your code here</description>
+			<filepath>src\org\n8lm\math\Vertex.java</filepath>
+			<line>22</line>
+			<timestamp>1261581734</timestamp>
+		</todotaskitem>
+		<todotaskitem>
+			<description>TODO: Add your code here</description>
+			<filepath>src\org\n8lm\math\Vertex.java</filepath>
+			<line>26</line>
+			<timestamp>1261581734</timestamp>
+		</todotaskitem>
+	</tasks>
+</project>
