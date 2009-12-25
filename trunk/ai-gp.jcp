@@ -127,18 +127,6 @@
 		</todotaskitem>
 		<todotaskitem>
 			<description>TODO: Add your code here</description>
-			<filepath>src\org\n8lm\math\Vertex.java</filepath>
-			<line>22</line>
-			<timestamp>1261628056</timestamp>
-		</todotaskitem>
-		<todotaskitem>
-			<description>TODO: Add your code here</description>
-			<filepath>src\org\n8lm\math\Vertex.java</filepath>
-			<line>27</line>
-			<timestamp>1261628056</timestamp>
-		</todotaskitem>
-		<todotaskitem>
-			<description>TODO: Add your code here</description>
 			<filepath>src\org\n8lm\math\Line.java</filepath>
 			<line>10</line>
 			<timestamp>1261628328</timestamp>
@@ -146,20 +134,32 @@
 		<todotaskitem>
 			<description>TODO, add your application code</description>
 			<filepath>src\Program.java</filepath>
-			<line>27</line>
-			<timestamp>1261628722</timestamp>
-		</todotaskitem>
-		<todotaskitem>
-			<description>TODO: Add your code here</description>
-			<filepath>src\org\n8lm\math\InfiniteLine.java</filepath>
 			<line>29</line>
-			<timestamp>1261629592</timestamp>
+			<timestamp>1261714296</timestamp>
 		</todotaskitem>
 		<todotaskitem>
 			<description>TODO: Add your code here</description>
 			<filepath>src\org\n8lm\math\InfiniteLine.java</filepath>
+			<line>30</line>
+			<timestamp>1261753004</timestamp>
+		</todotaskitem>
+		<todotaskitem>
+			<description>TODO: Add your code here</description>
+			<filepath>src\org\n8lm\math\InfiniteLine.java</filepath>
+			<line>36</line>
+			<timestamp>1261753004</timestamp>
+		</todotaskitem>
+		<todotaskitem>
+			<description>TODO: Add your code here</description>
+			<filepath>src\org\n8lm\math\Vertex.java</filepath>
+			<line>28</line>
+			<timestamp>1261754108</timestamp>
+		</todotaskitem>
+		<todotaskitem>
+			<description>TODO: Add your code here</description>
+			<filepath>src\org\n8lm\math\Vertex.java</filepath>
 			<line>35</line>
-			<timestamp>1261629592</timestamp>
+			<timestamp>1261754108</timestamp>
 		</todotaskitem>
 	</tasks>
 </project>

@@ -46,7 +46,7 @@ public class Program {
     			for(j=0;j<i;j++)
     				if(vertexes.get(j).Name.equals(str))
     				{
-    					System.out.println("重输入一个角");
+    					System.out.println("You have a same angle!");
     					i--;
     					continue;
     				}
@@ -82,7 +82,7 @@ public class Program {
     	}
     	catch (IOException e)
     	{
-    		System.out.println("输入错误");
+    		System.out.println("OI Error!!!");
     		return ;
     	}
     	/*

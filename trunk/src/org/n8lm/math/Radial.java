@@ -5,7 +5,7 @@ import org.n8lm.math.Line;
 class Radial extends Line {
 		
 	protected Vertex pointA;
-	protected Vertex pointB;
+	protected boolean isLeft;
 	/**
 	 * Method Radial
 	 *
