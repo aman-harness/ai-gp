@@ -10,6 +10,8 @@ public class Vertex extends GeometryObject{
 	 * @param args
 	 *
 	 */
+	 
+	protected Vector<Radial> radials;
 
 	/**
 	 * Method Point
@@ -17,10 +19,13 @@ public class Vertex extends GeometryObject{
 	 *
 	 */
 	public Vertex() {
+		radials = new Radial();
 		// TODO: Add your code here
 	}	
 	
 	public Vertex(String name) {
+		super(name);
+		radials = new Radial();
 		// TODO: Add your code here
 	}
 }
