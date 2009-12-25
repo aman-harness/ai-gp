@@ -19,7 +19,7 @@ public class InfiniteLine extends Line {
 	
 	public void add(Vertex th)
 	{
-		System.out.println(th.Name);
+		th.add(this);
 		vertexes.add(th);
 	}
 	 
