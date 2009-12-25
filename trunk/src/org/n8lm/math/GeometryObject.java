@@ -10,11 +10,19 @@ abstract class GeometryObject {
 	 */
 	public String Name;
 	
-	public GeometryObject() {
+	public GeometryObject()
+	{
 		// TODO: Add your code here
 	}
-	public GeometryObject(String name) {
-		Name = name;
+	
+	public GeometryObject(String name)
+	{
+		this.Name = name;
 		// TODO: Add your code here
+	}
+	
+	public String toString()
+	{
+		return "[name:" + Name + "]";
 	}
 }
