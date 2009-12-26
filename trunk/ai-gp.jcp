@@ -109,12 +109,6 @@
 		</todotaskitem>
 		<todotaskitem>
 			<description>TODO: Add your code here</description>
-			<filepath>src\org\n8lm\math\Radial.java</filepath>
-			<line>17</line>
-			<timestamp>1261578692</timestamp>
-		</todotaskitem>
-		<todotaskitem>
-			<description>TODO: Add your code here</description>
 			<filepath>src\org\n8lm\math\GeometryObject.java</filepath>
 			<line>17</line>
 			<timestamp>1261627242</timestamp>
@@ -139,18 +133,6 @@
 		</todotaskitem>
 		<todotaskitem>
 			<description>TODO: Add your code here</description>
-			<filepath>src\org\n8lm\math\InfiniteLine.java</filepath>
-			<line>30</line>
-			<timestamp>1261753004</timestamp>
-		</todotaskitem>
-		<todotaskitem>
-			<description>TODO: Add your code here</description>
-			<filepath>src\org\n8lm\math\InfiniteLine.java</filepath>
-			<line>36</line>
-			<timestamp>1261753004</timestamp>
-		</todotaskitem>
-		<todotaskitem>
-			<description>TODO: Add your code here</description>
 			<filepath>src\org\n8lm\math\Vertex.java</filepath>
 			<line>28</line>
 			<timestamp>1261754108</timestamp>
@@ -160,6 +142,24 @@
 			<filepath>src\org\n8lm\math\Vertex.java</filepath>
 			<line>35</line>
 			<timestamp>1261754108</timestamp>
+		</todotaskitem>
+		<todotaskitem>
+			<description>TODO: Add your code here</description>
+			<filepath>src\org\n8lm\math\Radial.java</filepath>
+			<line>18</line>
+			<timestamp>1261824336</timestamp>
+		</todotaskitem>
+		<todotaskitem>
+			<description>TODO: Add your code here</description>
+			<filepath>src\org\n8lm\math\InfiniteLine.java</filepath>
+			<line>35</line>
+			<timestamp>1261824844</timestamp>
+		</todotaskitem>
+		<todotaskitem>
+			<description>TODO: Add your code here</description>
+			<filepath>src\org\n8lm\math\InfiniteLine.java</filepath>
+			<line>41</line>
+			<timestamp>1261824844</timestamp>
 		</todotaskitem>
 	</tasks>
 </project>

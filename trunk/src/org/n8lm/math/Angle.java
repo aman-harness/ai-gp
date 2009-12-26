@@ -6,7 +6,7 @@ class Angle extends GeometryObject {
 	protected float angle;
 	protected Vertex vertex;
 	protected Line lineA;
-	protected Line lineB;	
+	protected Line lineB;
 	/**
 	 * Method Angle
 	 *

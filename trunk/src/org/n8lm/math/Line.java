@@ -11,4 +11,6 @@ abstract class Line extends GeometryObject {
 	public Line(String name) {
 		super(name);
 	}
+	
+	abstract public boolean isVertexOnLine(Vertex vertex);
 }

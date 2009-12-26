@@ -20,6 +20,11 @@ public class InfiniteLine extends Line {
 	public void add(Vertex th)
 	{
 		th.add(this);
+		if(vertexes.size() > 0)
+		{
+			vertexes.lastElement().add(new Radial(vertexes.lastElement().Name + th.Name, this, vertexes.lastElement(), false));
+			th.add(new Radial(th.Name + vertexes.lastElement().Name, this, th, true));
+		}
 		vertexes.add(th);
 	}
 	 
@@ -47,5 +52,32 @@ public class InfiniteLine extends Line {
 		}
 		str += "]";
 		return str;
+	}
+	
+	public boolean isVertexOnLine(Vertex vertex)
+	{
+		if(vertexes.indexOf(vertex) == -1)
+			return false;
+		return true;
+	}
+	
+	public boolean isVertexOnLine(Vertex vertex,Vertex before,boolean direction)
+	{
+		int x,l;
+		if(vertex == before)
+			return false;
+		if((x = vertexes.indexOf(before)) == -1)
+			return false;
+		if(direction)
+		{
+			if((l = vertexes.indexOf(vertex)) >= x || l == -1)
+				return false;
+		}
+		else
+		{
+			if(vertexes.indexOf(vertex, x) == -1)
+				return false;
+		}
+		return true;
 	}
 }
