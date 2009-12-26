@@ -20,5 +20,12 @@ class LineSegment extends Line {
 		pointA = a;
 		pointB = b;
 		// TODO: Add your code here
-	}	
+	}
+	
+	public boolean isVertexOnLine(Vertex vertex)
+	{
+		if(pointA == vertex || pointB == vertex)
+			return true;
+		return false;
+	}
 }
