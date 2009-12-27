@@ -33,18 +33,18 @@ public class Program {
     
     public static void init()
     {
+    	ProblemXMLReader reader;
+		reader = new ProblemXMLReader();
+		SAXParserFactory sf = SAXParserFactory.newInstance(); 
 		try { 
-			SAXParserFactory sf = SAXParserFactory.newInstance(); 
 			SAXParser sp = sf.newSAXParser(); 
-			ProblemXMLReader reader = new ProblemXMLReader();
 			sp.parse(new InputSource("problem.xml"), reader);
-			
-    		vertexes = reader.vertexes;
-    		infiniteLines = reader.infiniteLines;
     		
 		} catch (Exception e) { 
 			e.printStackTrace(); 
 		} 
+    	vertexes = reader.vertexes;
+    	infiniteLines = reader.infiniteLines;
     	/*
     	String str;
     	int i,j,k,a,n;
