@@ -39,6 +39,10 @@
 				<path>src\org\n8lm\math</path>
 			</folderitem>
 			<fileitem>
+				<path>src\MyXMLReader.java</path>
+				<folder>src</folder>
+			</fileitem>
+			<fileitem>
 				<path>src\Program.java</path>
 				<folder>src</folder>
 			</fileitem>
@@ -103,12 +107,6 @@
 		</todotaskitem>
 		<todotaskitem>
 			<description>TODO: Add your code here</description>
-			<filepath>src\org\n8lm\math\Angle.java</filepath>
-			<line>18</line>
-			<timestamp>1261566874</timestamp>
-		</todotaskitem>
-		<todotaskitem>
-			<description>TODO: Add your code here</description>
 			<filepath>src\org\n8lm\math\GeometryObject.java</filepath>
 			<line>17</line>
 			<timestamp>1261627242</timestamp>
@@ -124,24 +122,6 @@
 			<filepath>src\org\n8lm\math\Line.java</filepath>
 			<line>10</line>
 			<timestamp>1261628328</timestamp>
-		</todotaskitem>
-		<todotaskitem>
-			<description>TODO, add your application code</description>
-			<filepath>src\Program.java</filepath>
-			<line>29</line>
-			<timestamp>1261714296</timestamp>
-		</todotaskitem>
-		<todotaskitem>
-			<description>TODO: Add your code here</description>
-			<filepath>src\org\n8lm\math\Vertex.java</filepath>
-			<line>28</line>
-			<timestamp>1261754108</timestamp>
-		</todotaskitem>
-		<todotaskitem>
-			<description>TODO: Add your code here</description>
-			<filepath>src\org\n8lm\math\Vertex.java</filepath>
-			<line>35</line>
-			<timestamp>1261754108</timestamp>
 		</todotaskitem>
 		<todotaskitem>
 			<description>TODO: Add your code here</description>
@@ -160,6 +140,30 @@
 			<filepath>src\org\n8lm\math\InfiniteLine.java</filepath>
 			<line>41</line>
 			<timestamp>1261824844</timestamp>
+		</todotaskitem>
+		<todotaskitem>
+			<description>TODO: Add your code here</description>
+			<filepath>src\org\n8lm\math\Vertex.java</filepath>
+			<line>29</line>
+			<timestamp>1261835632</timestamp>
+		</todotaskitem>
+		<todotaskitem>
+			<description>TODO: Add your code here</description>
+			<filepath>src\org\n8lm\math\Vertex.java</filepath>
+			<line>36</line>
+			<timestamp>1261835632</timestamp>
+		</todotaskitem>
+		<todotaskitem>
+			<description>TODO: Add your code here</description>
+			<filepath>src\org\n8lm\math\Angle.java</filepath>
+			<line>18</line>
+			<timestamp>1261835662</timestamp>
+		</todotaskitem>
+		<todotaskitem>
+			<description>TODO: Add your code here</description>
+			<filepath>src\org\n8lm\math\Angle.java</filepath>
+			<line>23</line>
+			<timestamp>1261835662</timestamp>
 		</todotaskitem>
 	</tasks>
 </project>

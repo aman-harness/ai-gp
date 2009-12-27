@@ -14,6 +14,7 @@ public class Vertex extends GeometryObject{
 	 
 	protected Vector<Radial> radials;
 	protected Vector<InfiniteLine> infiniteLines;
+	protected Vector<Angle> angles;
 
 	/**
 	 * Method Point
