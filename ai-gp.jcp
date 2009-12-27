@@ -39,7 +39,7 @@
 				<path>src\org\n8lm\math</path>
 			</folderitem>
 			<fileitem>
-				<path>src\MyXMLReader.java</path>
+				<path>src\ProblemXMLReader.java</path>
 				<folder>src</folder>
 			</fileitem>
 			<fileitem>
