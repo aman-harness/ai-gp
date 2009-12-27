@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="GB2312"?>
+<problem>
+	<vertexes>
+		<vertex>A</vertex>
+		<vertex>B</vertex>
+		<vertex>C</vertex>
+		<vertex>E</vertex>
+		<vertex>F</vertex>
+		<vertex>G</vertex>
+		<vertex>H</vertex>
+		<vertex>I</vertex>
+		<vertex>J</vertex>
+	</vertexes>
+	<lines>
+		<line>
+			<name>GABH</name>
+			<vertex>G</vertex>
+			<vertex>A</vertex>
+			<vertex>B</vertex>
+			<vertex>H</vertex>
+		</line>
+		<line>
+			<name>ECF</name>
+			<vertex>E</vertex>
+			<vertex>C</vertex>
+			<vertex>F</vertex>
+		</line>
+		<line>
+			<name>CAI</name>
+			<vertex>C</vertex>
+			<vertex>A</vertex>
+			<vertex>I</vertex>
+		</line>
+		<line>
+			<name>CBJ</name>
+			<vertex>C</vertex>
+			<vertex>B</vertex>
+			<vertex>J</vertex>
+		</line>
+	</lines>
+</problem>

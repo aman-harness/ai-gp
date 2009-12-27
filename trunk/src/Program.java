@@ -9,6 +9,8 @@
 import org.n8lm.math.*;
 import java.util.Vector;
 import java.io.*;
+import org.xml.sax.*;
+import javax.xml.parsers.*; 
 
 public class Program {
     
@@ -17,19 +19,33 @@ public class Program {
     
     public static void main(String[] args) {
     	
+		long lasting = System.currentTimeMillis(); 
+		int i;
     	init();
     	
-    	int i;
     	for(i=0;i<vertexes.size();i++)
     		System.out.println(vertexes.get(i).toString());
     	for(i=0;i<infiniteLines.size();i++)
     		System.out.println(infiniteLines.get(i).toString());
-    	// TODO, add your application code
-    	System.out.println("Hello World!");
+    	
+		System.out.println("Run Time：" + (System.currentTimeMillis() - lasting) + " ms");
     }
     
     public static void init()
     {
+		try { 
+			SAXParserFactory sf = SAXParserFactory.newInstance(); 
+			SAXParser sp = sf.newSAXParser(); 
+			ProblemXMLReader reader = new ProblemXMLReader();
+			sp.parse(new InputSource("problem.xml"), reader);
+			
+    		vertexes = reader.vertexes;
+    		infiniteLines = reader.infiniteLines;
+    		
+		} catch (Exception e) { 
+			e.printStackTrace(); 
+		} 
+    	/*
     	String str;
     	int i,j,k,a,n;
     	i=0;
@@ -69,7 +85,6 @@ public class Program {
 					str.trim();
     				for(j=0;j<vertexes.size();j++)
     				{
-    					System.out.println(str + " " + vertexes.get(j).Name);
     					if(vertexes.get(j).Name.equals(str))
     					{
     						infiniteLines.get(i).add(vertexes.get(j));
@@ -83,12 +98,6 @@ public class Program {
     	catch (IOException e)
     	{
     		System.out.println("OI Error!!!");
-    		return ;
-    	}
-    	/*
-    	catch (FileNotFoundException e)
-    	{
-    		System.out.println("文件没找到");
     		return ;
     	}*/
     }
