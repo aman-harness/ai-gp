@@ -3,8 +3,12 @@ import java.lang.reflect.Method;
 import net.sf.cglib.core.ClassGenerator;
 import net.sf.cglib.core.DefaultGeneratorStrategy;
 import net.sf.cglib.proxy.*;
+/*
 import net.sf.cglib.transform.TransformingClassGenerator;
 import net.sf.cglib.transform.impl.AddPropertyTransformer;
+*/
+import net.sf.cglib.transform.impl.AddPropertyTransformer;
+import net.sf.cglib.transform.*;
 
 import org.objectweb.asm.Type;
 
@@ -17,11 +21,15 @@ public class TestCGLib implements MethodInterceptor {
             protected ClassGenerator transform(ClassGenerator cg) {
                 return new TransformingClassGenerator(
                         cg,
-                        new AddPropertyTransformer(
-                                new String[] { "XX" },//这个地方根据你的Xml来构造相应的名称和类型
-                                new Type[] { Type.INT_TYPE }
+                        new ClassTransformerChain(
+                        	new ClassTransformer[]{
+                        		new AddPropertyTransformer(
+                                	new String[] { "XX" },//这个地方根据你的Xml来构造相应的名称和类型
+                                	new Type[] { Type.INT_TYPE }
+                        		)
+                        	}
                         )
-                );
+                	);
             }
         });
         Object object = e.create();
