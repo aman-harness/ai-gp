@@ -1,5 +1,6 @@
 E:\sunzh\Java\workspace\ai-gp\src\ProblemXMLReader.java
 E:\sunzh\Java\workspace\ai-gp\src\Program.java
+E:\sunzh\Java\workspace\ai-gp\src\TestCGLib.java
 E:\sunzh\Java\workspace\ai-gp\src\org\n8lm\math\Angle.java
 E:\sunzh\Java\workspace\ai-gp\src\org\n8lm\math\GeometryObject.java
 E:\sunzh\Java\workspace\ai-gp\src\org\n8lm\math\InfiniteLine.java
@@ -7,4 +8,5 @@ E:\sunzh\Java\workspace\ai-gp\src\org\n8lm\math\Line.java
 E:\sunzh\Java\workspace\ai-gp\src\org\n8lm\math\LineSegment.java
 E:\sunzh\Java\workspace\ai-gp\src\org\n8lm\math\Parallel.java
 E:\sunzh\Java\workspace\ai-gp\src\org\n8lm\math\Radial.java
+E:\sunzh\Java\workspace\ai-gp\src\org\n8lm\math\Relationship.java
 E:\sunzh\Java\workspace\ai-gp\src\org\n8lm\math\Vertex.java
