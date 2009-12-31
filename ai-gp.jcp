@@ -7,11 +7,14 @@
 		<output_path>classes\</output_path>
 		<source_path>src\</source_path>
 		<jdkprofile_ref>JDK version 1.7.0</jdkprofile_ref>
-		<compiler_ref/>
+		<compiler_ref>&lt;Default&gt;</compiler_ref>
 		<ant_ref/>
 	</settings>
 	<ant_events/>
-	<run_items/>
+	<run_items>
+		<item run="Program"/>
+		<item run="TestCGLib"/>
+	</run_items>
 	<runtimes>
 		<runtime>
 			<label>&lt;Default&gt;</label>
@@ -23,7 +26,11 @@
 			<verify>true</verify>
 		</runtime>
 	</runtimes>
-	<libraries/>
+	<libraries>
+		<library_ref>cglib</library_ref>
+		<library_ref>cglib-docs</library_ref>
+		<library_ref>asm-3.2</library_ref>
+	</libraries>
 	<files>
 		<include>
 			<folderitem>
@@ -44,6 +51,10 @@
 			</fileitem>
 			<fileitem>
 				<path>src\Program.java</path>
+				<folder>src</folder>
+			</fileitem>
+			<fileitem>
+				<path>src\TestCGLib.java</path>
 				<folder>src</folder>
 			</fileitem>
 			<fileitem>
@@ -72,6 +83,10 @@
 			</fileitem>
 			<fileitem>
 				<path>src\org\n8lm\math\Radial.java</path>
+				<folder>src\org\n8lm\math</folder>
+			</fileitem>
+			<fileitem>
+				<path>src\org\n8lm\math\Relationship.java</path>
 				<folder>src\org\n8lm\math</folder>
 			</fileitem>
 			<fileitem>
