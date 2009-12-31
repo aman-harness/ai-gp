@@ -1,4 +1,4 @@
-#labels thought
+#labels Idea
 主要说明程序中的几何结构的计算机数据结构。
 
 = 数据结构 =
