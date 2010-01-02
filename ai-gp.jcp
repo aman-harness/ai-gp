@@ -45,6 +45,9 @@
 			<folderitem>
 				<path>src\org\n8lm\math</path>
 			</folderitem>
+			<folderitem>
+				<path>src\org\n8lm\math\struct</path>
+			</folderitem>
 			<fileitem>
 				<path>src\ProblemXMLReader.java</path>
 				<folder>src</folder>
@@ -92,6 +95,18 @@
 			<fileitem>
 				<path>src\org\n8lm\math\Vertex.java</path>
 				<folder>src\org\n8lm\math</folder>
+			</fileitem>
+			<fileitem>
+				<path>src\org\n8lm\math\struct\SetupXMLReader.java</path>
+				<folder>src\org\n8lm\math\struct</folder>
+			</fileitem>
+			<fileitem>
+				<path>src\org\n8lm\math\struct\VirtualClassGenMethod.java</path>
+				<folder>src\org\n8lm\math\struct</folder>
+			</fileitem>
+			<fileitem>
+				<path>src\org\n8lm\math\struct\VirtualClassStrategy.java</path>
+				<folder>src\org\n8lm\math\struct</folder>
 			</fileitem>
 		</include>
 	</files>
@@ -179,6 +194,24 @@
 			<filepath>src\org\n8lm\math\Angle.java</filepath>
 			<line>23</line>
 			<timestamp>1261835662</timestamp>
+		</todotaskitem>
+		<todotaskitem>
+			<description>TODO: Add your code here</description>
+			<filepath>src\org\n8lm\math\struct\VirtualClassStrategy.java</filepath>
+			<line>27</line>
+			<timestamp>1262419604</timestamp>
+		</todotaskitem>
+		<todotaskitem>
+			<description>TODO: Add your code here</description>
+			<filepath>src\org\n8lm\math\struct\VirtualClassStrategy.java</filepath>
+			<line>27</line>
+			<timestamp>1262419604</timestamp>
+		</todotaskitem>
+		<todotaskitem>
+			<description>TODO: Add your code here</description>
+			<filepath>src\org\n8lm\math\struct\SetupXMLReader.java</filepath>
+			<line>39</line>
+			<timestamp>1262421996</timestamp>
 		</todotaskitem>
 	</tasks>
 </project>

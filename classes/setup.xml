@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="GB2312"?>
 <class>
 <shapes>
-	<shape name="Triangle" parent="GeometryObject">
+	<shape name="Triangle">
 		<property>
 			<LineSegment>AB</LineSegment>
 			<LineSegment>BC</LineSegment>
@@ -13,50 +13,42 @@
 			<Angle>ABC</Angle>
 			<Angle>BCA</Angle>
 		</property>
-		<conditions>
-			<condition>
-				<InfiniteLine>AB</InfiniteLine>
-				<InfiniteLine>BC</InfiniteLine>
-				<InfiniteLine>AC</InfiniteLine>
-			</condition>
-		</conditions>
-		<theorems>
-			<theorem name="内角和180">
-				<equals>
-					<equal><sum><Angle>BAC</Angle><Angle>ABC</Angle><Angle>BCA</Angle></sum></equal>
-					<equal>180</equal>
-				</equals>
-			</theorem>
-		</theorems>
+		<condition>
+			<InfiniteLine>AB</InfiniteLine>
+			<InfiniteLine>BC</InfiniteLine>
+			<InfiniteLine>AC</InfiniteLine>
+		</condition>
+		<theorem name="内角和180">
+			<equals>
+				<equal><sum><Angle>BAC</Angle><Angle>ABC</Angle><Angle>BCA</Angle></sum></equal>
+				<equal>180</equal>
+			</equals>
+		</theorem>
 	</shape>
 	<shape name="RightTriangle" parent="Triangle">
 		<property>
 			<Angle>rightAngle</Angle>
 			<Vertex>rightVertex</Vertex>
 		</property>
-		<conditions>
-			<condition>
-				<base>Triangle</base>
-				<equals>
-					<equal><sum><Angle>ABC</Angle><Angle>BCA</Angle></sum></equal>
-					<equal>90</equal>
-				</equals>
-			</condition>
-			<condition>
-				<equals>
-					<equal><Angle>BAC</Angle></equal>
-					<equal>90</equal>
-				</equals>
-			</condition>
-		</conditions>
-		<theorems>
-			<theorem name="余角和90">
-				<equals>
-					<equal><sum><Angle>ABC</Angle><Angle>BCA</Angle></sum></equal>
-					<equal>90</equal>
-				</equals>
-			</theorem>
-		</theorems>
+		<condition>
+			<base>Triangle</base>
+			<equals>
+				<equal><sum><Angle>ABC</Angle><Angle>BCA</Angle></sum></equal>
+				<equal>90</equal>
+			</equals>
+		</condition>
+		<condition>
+			<equals>
+				<equal><Angle>BAC</Angle></equal>
+				<equal>90</equal>
+			</equals>
+		</condition>
+		<theorem name="余角和90">
+			<equals>
+				<equal><sum><Angle>ABC</Angle><Angle>BCA</Angle></sum></equal>
+				<equal>90</equal>
+			</equals>
+		</theorem>
 	</shape>
 </shapes>
 </class>
