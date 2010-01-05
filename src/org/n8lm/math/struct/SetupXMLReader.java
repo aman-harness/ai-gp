@@ -6,13 +6,12 @@ import org.objectweb.asm.Type;
 import org.n8lm.math.*;
 import java.util.*;
 
-class SetupXMLReader extends DefaultHandler {
+public class SetupXMLReader extends DefaultHandler {
 	
-	public Map<String,VirtualClassStrategy> vcStrategies;
-	public Map<String,Class> vClasses;
+	private ClassDatabase database;
 	
 	private boolean inside;
-	private String nowClassName,QName,lastWord;
+	private String QName,lastWord;
 	private Type lastType;
 	private VirtualClassStrategy nowVcs;
 	private ClassState classState;
@@ -32,30 +31,19 @@ class SetupXMLReader extends DefaultHandler {
 	 */
 	public SetupXMLReader() {
 		super();
-		vcStrategies = new Vector();
 		classState = ClassState.none;
 		// TODO: Add your code here
 	}	
+		
+	public void setDatabase(ClassDatabase data)
+	{
+		database = data;
+	}
+	
 	public void characters(char ch[], int start, int length) throws SAXException {
 		String tag, str, parent;
 		switch (classState) {
-    		case ClassState.none: 
-    			if(qName.equals("shape"))
-    			{
-    				nowClassName = attrs.getValue("name");
-    				nowVcs = new VirtualClassStrategy();
-    				classState = ClassState.inside;
-    			}
-    			break;
-    		case ClassState.inside: 
-    			if(qName.equals("property"))
-    				classState = ClassState.property;
-    			else if(qName.equals("condition"))
-    				classState = ClassState.condition;
-    			else if(qName.equals("theorem"))
-    				classState = ClassState.theorem;
-    			break;
-    		case ClassState.property:
+    		case property:
     			if(inside)
     				lastWord = new String(ch, start, length);
     			break;
@@ -67,34 +55,37 @@ class SetupXMLReader extends DefaultHandler {
 	public void startElement(String uri, String localName, String qName, Attributes attrs)
 	{
 		switch (classState) {
-    		case ClassState.none: 
+    		case none: 
     			if(qName.equals("shape"))
     			{
-    				nowClassName = attrs.getValue("name");
-    				nowVcs = new VirtualClassStrategy();
+    				if(attrs.getIndex("base") == -1)
+    				{
+    					nowVcs = new VirtualClassStrategy(attrs.getValue("name"));
+    				}
+    				else
+    				{
+    					nowVcs = new VirtualClassStrategy(attrs.getValue("name"),attrs.getValue("base"));
+    					nowVcs.baseClass = database.getClassFromName(nowVcs.baseClassName);
+    				}
     				classState = ClassState.inside;
     			}
     			break;
-    		case ClassState.inside: 
+    			
+    		case inside: 
     			if(qName.equals("property"))
     				classState = ClassState.property;
+    			/*
     			else if(qName.equals("condition"))
     				classState = ClassState.condition;
     			else if(qName.equals("theorem"))
     				classState = ClassState.theorem;
     			break;
-    		case ClassState.property:
+    			*/
+    			
+    		case property:
     			inside = true;
     			QName = qName;
-    			if(Class.forName(QName) != null)
-    			{
-    				lastType = Type.getType(Class.forName(QName));
-    			}
-    			else
-    			{
-    				if(vClasses.containsKey(QName))
-    					lastType = Type.getType(vClasses.get(QName));
-    			}
+    			lastType = Type.getType(database.getClassFromName(QName));
     			break;
     			
     		default :
@@ -103,30 +94,25 @@ class SetupXMLReader extends DefaultHandler {
 	
 	public void endElement(String uri, String localName, String qName)
 	{
-		switch (classState) {
-    		case ClassState.none: 
+		switch (classState) {    			
+    		case inside: 
     			if(qName.equals("shape"))
     			{
-    				nowClassName = attrs.getValue("name");
-    				nowVcs = new VirtualClassStrategy();
-    				classState = ClassState.inside;
+    				nowVcs.ownClass = database.getClassFromVCS(nowVcs);
+    				database.addVCS(nowVcs);
+    				classState = ClassState.none;
     			}
     			break;
-    		case ClassState.inside: 
-    			if(qName.equals("property"))
-    				classState = ClassState.property;
-    			else if(qName.equals("condition"))
-    				classState = ClassState.condition;
-    			else if(qName.equals("theorem"))
-    				classState = ClassState.theorem;
-    			break;
-    		case ClassState.property:
+    			
+    		case property:
+    			if(!qName.equals("property"))
+    				nowVcs.addPorperty(lastWord,lastType);
+    			else
+    				classState = ClassState.inside;
     			inside = false;
-    			nowVcs.addPorperty(lastWord,lastType);
     			break;
     			
     		default :
 		}
-		tags.push(qName);
 	}
 }
