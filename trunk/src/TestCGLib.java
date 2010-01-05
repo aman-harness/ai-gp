@@ -33,6 +33,11 @@ public class TestCGLib implements MethodInterceptor {
             }
         });
         Object object = e.create();
+        System.out.println(object.getClass().getName());
+        System.out.println(object.getClass().getMethod("setXX", new Class[]{int.class}).invoke(object, 123));//.getMethod("settestint", new Class[]{int.class}).invoke(o, 123));
+        System.out.println(object.getClass().getMethod("getXX").invoke(object));
+        object = e.create();
+        System.out.println(object.getClass().getName());
         System.out.println(object.getClass().getMethod("setXX", new Class[]{int.class}).invoke(object, 123));//.getMethod("settestint", new Class[]{int.class}).invoke(o, 123));
         System.out.println(object.getClass().getMethod("getXX").invoke(object));
     }

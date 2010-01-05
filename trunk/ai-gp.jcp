@@ -97,6 +97,10 @@
 				<folder>src\org\n8lm\math</folder>
 			</fileitem>
 			<fileitem>
+				<path>src\org\n8lm\math\struct\ClassDatabase.java</path>
+				<folder>src\org\n8lm\math\struct</folder>
+			</fileitem>
+			<fileitem>
 				<path>src\org\n8lm\math\struct\SetupXMLReader.java</path>
 				<folder>src\org\n8lm\math\struct</folder>
 			</fileitem>
@@ -198,20 +202,26 @@
 		<todotaskitem>
 			<description>TODO: Add your code here</description>
 			<filepath>src\org\n8lm\math\struct\VirtualClassStrategy.java</filepath>
-			<line>27</line>
-			<timestamp>1262419604</timestamp>
+			<line>33</line>
+			<timestamp>1262688268</timestamp>
 		</todotaskitem>
 		<todotaskitem>
 			<description>TODO: Add your code here</description>
 			<filepath>src\org\n8lm\math\struct\VirtualClassStrategy.java</filepath>
-			<line>27</line>
-			<timestamp>1262419604</timestamp>
+			<line>44</line>
+			<timestamp>1262688268</timestamp>
 		</todotaskitem>
 		<todotaskitem>
 			<description>TODO: Add your code here</description>
 			<filepath>src\org\n8lm\math\struct\SetupXMLReader.java</filepath>
-			<line>39</line>
-			<timestamp>1262421996</timestamp>
+			<line>37</line>
+			<timestamp>1262688732</timestamp>
+		</todotaskitem>
+		<todotaskitem>
+			<description>TODO: Add your code here</description>
+			<filepath>src\org\n8lm\math\struct\ClassDatabase.java</filepath>
+			<line>17</line>
+			<timestamp>1262688826</timestamp>
 		</todotaskitem>
 	</tasks>
 </project>

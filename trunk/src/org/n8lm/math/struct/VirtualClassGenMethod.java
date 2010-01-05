@@ -32,5 +32,6 @@ public class VirtualClassGenMethod implements MethodInterceptor {
 	public Object intercept(Object parm1, Method parm2, Object[] parm3, 
 				MethodProxy parm4) throws Throwable {
 		// TODO: Add your code here
+		return null;
 	}	
 }
