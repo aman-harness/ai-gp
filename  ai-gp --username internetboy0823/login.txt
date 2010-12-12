@@ -1,4 +1,0 @@
-	Name: Sun Zehao
-        UserName: interne4
-        Password: 0823sunzehao
-
