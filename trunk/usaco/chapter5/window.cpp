@@ -1,25 +1,9 @@
 /*
 ID: interne4
-PROG: schlnet
+PROG: window
 LANG: C++
-DATA: 2010.12.11
-ALGO: search gragh
-PROV: 
-if a school is receiving school, it must can be called by other school.
-Else it must receive a copy of the new software.
-So we just need to count the number of unreceiving school in order for
-Subtask A.
-
-To finish the Subtask B, we should prove a obvious but important fact.
-if an extension have to be made, the receiving school of the school 
-which has the extension can has this extension and make more schools
-can introduce the software to these new schools, which this extension 
-causes.
-So if we want to compute the minimal number of extensions,
-we should use the extensions on the school which doesn't have a 
-distribution list of the school hasn't been introduced. Then make a 
-program compute which school should has some extensions. Finally, we 
-solved this problem.
+DATA: 2010.12.15
+ALGO: Links , Simulation
 */
 /**************************************	
 	OIer C++ IDE Generate
@@ -27,14 +11,15 @@ web:	http://www.n8lm.cn/product?id=1
 Please don't cut down these.
 **************************************/
 #include <fstream>
+#include <list>
 #include <memory.h>
 using namespace std;
-ifstream fin("schlnet.in");
-ofstream fout("schlnet.out");
+ifstream fin("window.in");
+ofstream fout("window.out");
+
 const int maxN = 100 + 1;
 int adj[maxN][maxN] = {0};
 int nadj[maxN][maxN] = {0};
-//int link[maxN] = {0};
 bool isRe[maxN] = {0};
 int n;
 
@@ -91,22 +76,6 @@ void tarjan(int i)
 		while (j!=i);
 	}
 }
-/*
-void expand(int sch)
-{
-	int i;
-	v[sch] = 1;
-	isA[sch] = 1;
-	fout << sch << endl;
-	
-	for(i = 1; i <= adj[sch][0]; i ++)
-	{
-		if(!v[adj[sch][i]])
-		{
-			expand(adj[sch][i]);
-		}
-	}
-}*/
 
 int origin;
 
@@ -165,31 +134,7 @@ int main()
 		}
 		
 	n = Bcnt;
-	/*
-	for(i = 1; i <= n; i ++)
-	{
-		memset(v,0,sizeof(v));
-		memset(isA,0,sizeof(isA));
-		expand(i);
-		for(j = 1; j <= n; j ++)
-		{
-			if(isA[j])
-				fout << j << ' ';
-			if(isA[j] && j == link[i])
-				break;
-		}
-		fout << endl;
-		
-		if(j <= n)
-			addE(j,i);
-		else if(link[i] == 0)
-		{
-			for(j = 1; j <= n; j ++)
-				if(isA[j])
-					link[j] = i;
-		}
-	}
-	*/
+	
 	s = 0;
 	for(i = 1; i <= n; i ++)
 	{
@@ -212,7 +157,11 @@ int main()
 	}
 	if(n == 1)
 		ans --;
-	
+	else
+	{
+		if(ans < s)
+			ans = s;
+	}
 	fout << ans << endl;
 	return 0;
 }
