@@ -75,10 +75,11 @@ double calcS(int id)
 	rect g,nr,r;
 	
 	q.push(its[id] -> r);
-	
 	for(it = windows.begin(); it != its[id]; it ++)
 	{
 		r = it -> r;
+		/*fout << char(it -> id) << endl;
+		fout << q.size() << endl;*/
 		q.push(NP);
 		while(!q.empty())
 		{
@@ -87,6 +88,13 @@ double calcS(int id)
 			
 			if(g.x1 == 0)
 				break;
+			
+			if(g.x2 < r.x1 || g.y2 < r.y1 || g.x1 > r.x2 || g.y1 > r.y2)
+			{
+				q.push(g);
+				continue;
+			}
+			
 			if(g.x1 < r.x1)
 			{
 				nr.x1 = g.x1;
@@ -159,6 +167,7 @@ void proc(int f, int narg[5])
 			windows.push_back(*its[narg[0]]);
 			windows.erase(its[narg[0]]);
 			its[narg[0]] = windows.end();
+			its[narg[0]] --;
 		break;
 		case 3:
 			windows.erase(its[narg[0]]);
