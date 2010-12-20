@@ -19,7 +19,9 @@ ofstream fout("tour.out");
 const int maxN = 100 + 1;
 int n, v;
 int m[maxN][maxN] = {0};
+int adj[maxN][maxN] = {0},adjn[maxN] = {0};
 int f[maxN][maxN] = {0};
+int ans[maxN] = {0};
 string c[maxN];
 
 
@@ -51,53 +53,44 @@ void init()
 				break;
 			}
 		}
-		fout << x << ' ' << y << endl;
 		m[x][y] = m[y][x] = 1;
+		adj[x][adjn[x] ++] = y;
+		adj[y][adjn[y] ++] = x;
 	}
 	
-	for(int i=1;i<=n;i++)
-		for(int j=1;j<=n;j++)
+	for(int i = 1; i <= n; i ++)
+		for(int j = 1; j <= n; j++)
 			f[i][j] = -1;
-	f[1][1] = 0;
+}
+
+void expand(int x,int y,int l,int s)
+{
+	int i,j;
+	if(f[x][y] < s)
+		f[x][y] = s;
+	else
+		return ;
+	//fout << x << ' ' << y << ' ' << s << endl;
+	for(i = 0; i < adjn[x]; i ++)
+	{
+		if(adj[x][i] < x)
+			continue;
+		if(adj[x][i] < y)
+			expand(adj[x][i], y, l, s + 1);
+		else if(adj[x][i] > y)
+			expand(y, adj[x][i], x, s + 1);
+		else if(x != l)
+			ans[y] = max(ans[y], s + 1);
+		
+	}
 }
 
 int main()
 {
 	int i, j, k, l;
 	init();
-	
-	for(i=1;i<=n;i++)
-	{
-		for(j=1;j<=n;j++)
-		{
-			for(k = 1; k < i; k ++)
-			{
-				if(m[k][i])
-					for(l = 1; l < j; l ++)
-					{
-						if(m[l][j] && (l != k || (l == 1 && k == 1 && i != j) )&& f[k][l] != -1)
-							f[i][j] = max(f[k][l] + 2, f[i][j]);
-					}
-			}
-			for(k = 1; k < i; k ++)
-			{
-				if(m[k][i] && (k != j || (j == 1 && k == 1 && i != j)) && f[k][j] != -1)
-					f[i][j] = max(f[k][j] + 1, f[i][j]);
-			}
-			
-			for(l = 1; l < j; l ++)
-			{
-				if(m[l][j] && (l != i || (l == 1 && i == 1 && i != j)) && f[i][l] != -1)
-					f[i][j] = max(f[i][l] + 1, f[i][j]);
-			}
-			fout << f[i][j] << ' ';
-		}
-		fout << endl;
-	}
-	int ma = 0;
-	for(i=1;i<=n;i++)
-		if(f[i][i] > ma)
-			ma = f[i][i];
-	fout << ma << endl;
+	ans[n] = 1;
+	expand(1,1,1,0);
+	fout << ans[n] << endl;
 	return 0;
 }
