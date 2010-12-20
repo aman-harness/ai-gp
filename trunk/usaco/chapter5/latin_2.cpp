@@ -3,71 +3,73 @@ ID: interne4
 PROG: latin
 LANG: C++
 DATA: 2010.12.17
-ALGO: Depth First Search
+ALGO: Depth First Search, Permutation group
 */
-/**************************************	
-	OIer C++ IDE Generate
-web:	http://www.n8lm.cn/product?id=1
-Please don't cut down these.
-**************************************/
 #include <fstream>
 using namespace std;
-ifstream fin("latin.in");
-ofstream fout("latin.out");
 
-const int maxN = 7 + 1;
-int latin[maxN][maxN] = {0};
-int isX[maxN][maxN] = {0};
-int isY[maxN][maxN] = {0};
-int n,s;
+int     N;
+bool    row_used[7][7];
+bool    col_used[7][7];
+int     factorial[7];
 
-void init()
+int 
+searchR (int r, int c)
 {
-	fin >> n;
-	for(int i=1;i<=n;i++)
+    if (c == N) {
+ 		return searchR (r + 1, 1);
+    }
+    if (r == N - 1) {
+ 		return 1;
+    }
+
+    int     i, t = 0, sum = 0;
+    int     s[2] = {-1, -1};
+
+    for (i = 0; i < N; i++)
 	{
-		isY[i][i] = 1;
-	}
+		 if (row_used[r][i] || col_used[c][i])
+   		 	 continue;
+	 	if (i > c)
+	 	    t = 1;
+	 	if (r == 1 && s[t] != -1) {
+	    	 sum += s[t];
+	 	}
+ 		else {
+    		row_used[r][i] = true;
+    		col_used[c][i] = true;
+   			s[t] = searchR (r, c + 1);
+			sum += s[t];
+    		row_used[r][i] = false;
+   			col_used[c][i] = false;
+ 		}
+    }
+    return sum;
 }
 
-void dfs(int x,int y)
+ 
+int main ()
 {
-	int i;
-	if(x == n)
-	{
-		s ++;
-		return ;
-	}
-	/*
-	1 2 3 4 5
-	1 2 3 4 5
-	1 2 3 4 5
-	1 2 3 4 5
-	*/
-	for(i=1;i<=n;i++)
-	{
-		if(!isX[i][x] && !isY[i][y])
-		{
-			isX[i][x] = 1;
-			isY[i][y] = 1;
-			if(y < n)
-				dfs(x, y + 1);
-			else
-				dfs(x + 1, 1);
-			isX[i][x] = 0;
-			isY[i][y] = 0;
-		}
-	}
-}
+    double  nLatin;
+    int     i;
 
-int main()
-{
-	int i,j,x,y;
-	
-	init();
-	
-	s = 0;
-	dfs(1,1);
-	fout << s << endl;
-	return 0;
+    ifstream fin ("latin.in");
+    fin >> N;
+    fin.close ();
+
+    factorial[0] = 1;
+    for (i = 0; i < N; i++) {
+		col_used[i][i] = true;
+		row_used[i][i] = true;
+		if (i > 0)
+    		factorial[i] = i * factorial[i - 1];
+    }
+
+    nLatin = (double) factorial[N - 1] * (double) searchR (1, 1);
+
+    ofstream fout ("latin.out");
+    fout.precision (0);
+    fout.setf (ios::fixed);
+    fout << nLatin << '\n';
+    fout.close ();
 }
