@@ -23,7 +23,7 @@ bool hashC[1400000] = {0};
 
 unsigned int BKDRHash(const char *str)
 {
-	unsigned int seed = 131; // 31 131 1313 13131 131313 etc..
+	unsigned int seed = 131;
 	unsigned int hash = 0;
  
 	while (*str)
@@ -43,17 +43,7 @@ void search(string str,int x)
 	int Cp[10],Cn = 0;
 	int Op[10],On = 0;
 	int Wp[10],Wn = 0;
-	/*
-	int CT[10] = {0};
-	int OT[10] = {0};
-	int WT[10] = {0};
-	for(i=0;i<10;i++)
-	{
-		CT[i] = Cp[i];
-		OT[i] = Op[i];
-		WT[i] = Wp[i];
-	}
-	*/
+	
 	int dd = BKDRHash(str.c_str())%1313131;
 	if(hashC[dd])
 		return;
@@ -120,19 +110,11 @@ void search(string str,int x)
 			return;
 		}
 	}
-	//fout << str << endl << x << endl;
-	//fout << Cn << ' '  << On << ' '  << Wn << endl; 
 	
 	if(Cn == 0 || On == 0 || Wn == 0)
 	{
 			fout << 1 << ' '<< x << endl;
 			exit(0);
-		/*
-		if(str == ori)
-		{
-			fout << 1 << ' '<< x << endl;
-			exit(0);
-		}*/
 	}
 	
 	int j,k;
@@ -151,13 +133,11 @@ void search(string str,int x)
 			{
 				if(Op[j] > Wp[k])
 				{
-					kl = k;// + 1;
+					kl = k;
 					continue;
 				}
 				else
 				{
-					//fout << i << ' ' << j << ' ' << k <<endl;
-					//fout << str << endl;;
 					string o;
 					o = str;
 					o.replace(Cp[i] + Wp[k] - Op[j] + 1,Op[j]-Cp[i]-1,str.substr(Cp[i]+1,Op[j]-Cp[i]-1));

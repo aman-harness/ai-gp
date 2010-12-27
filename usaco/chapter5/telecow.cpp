@@ -76,7 +76,6 @@ int maxflow()
 int main()
 {
 	int i,j;
-	
 	init();
 	
 	maxflow();
