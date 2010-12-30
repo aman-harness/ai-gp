@@ -1,5 +1,16 @@
+/*
+ID: interne4
+PROG: telecow
+LANG: C++
+*/
+/**************************************	
+	OIer C++ IDE Generate
+web:	http://www.n8lm.cn/product?id=1
+Please don't cut down these.
+**************************************/
 #include <fstream>
 #include <list>
+#include <vector>
 using namespace std;
 ifstream fin("telecow.in");
 ofstream fout("telecow.out");
@@ -8,7 +19,7 @@ const int maxN = 100 + 1;
 //int map[maxN][maxN] = {0};
 list<int> adj[maxN];
 list<int> wcs;
-list<int> ansl;
+vector<int> ansl;
 bool v[maxN] = {0};
 bool inw[maxN] = {0};
 bool ine[maxN] = {0};
@@ -35,9 +46,11 @@ void init()
 void greedy()
 {
 	int i,j;
-	int minS, ;
+	int minS;
 	int s;
 	int total;
+	int ar[maxN] = {0};
+	int aa[maxN] = {0};
 	list<int>::iterator it,it2,nextc;
 	
 	for(it2 = adj[c2].begin(); it2 != adj[c2].end(); it2 ++)
@@ -64,6 +77,11 @@ void greedy()
 				minS = s;
 				nextc = it;
 			}
+			else if(s == minS)
+			{
+				minS = s;
+				nextc = it;// 加入答案最小 
+			}
 		}
 		//fout << endl;
 		for(it2 = adj[*nextc].begin(); it2 != adj[*nextc].end(); it2 ++)
@@ -84,8 +102,31 @@ void greedy()
 			ansl.clear();
 			for(i = 0; i <= n; i ++)
 				if(inw[i])
-					ansl.push_front(i);
+					ansl.push_back(i);
 			ans = total;
+		}
+		else if(total == ans)
+		{
+			j = 0;
+			int t = 0;
+			for(i = 0; i < ansl.size(); i ++)
+			{
+				for(; j < ansl[i]; j ++)
+					if(inw[j])
+					{
+						t = 1;
+						break;
+					}
+				if(inw[ansl[i]] != 1)
+					break;
+			}
+			if(t)
+			{
+				ansl.clear();
+				for(i = 0; i <= n; i ++)
+					if(inw[i])
+						ansl.push_back(i);
+			}
 		}
 	}
 }
@@ -95,11 +136,14 @@ int main()
 	init();
 	greedy();
 	fout << ans << endl;
-	list<int>::iterator it;
-	for(it = ansl.begin(); it != ansl.end(); it ++)
-		fout << *it << ' ';
+	int i;
+	for(i = 0; i < ansl.size() - 1; i ++)
+		fout << ansl[i] << ' ';
 	if(!ansl.empty())
+	{
+		fout << ansl[ansl.size() - 1];
 		fout << endl;
+	}
 }
 /*
 int bfs()
