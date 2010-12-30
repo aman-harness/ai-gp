@@ -11,6 +11,7 @@ Please don't cut down these.
 #include <fstream>
 #include <list>
 #include <vector>
+#include <cstring>
 using namespace std;
 ifstream fin("telecow.in");
 ofstream fout("telecow.out");
@@ -40,6 +41,8 @@ void init()
 		adj[a].push_front(b);
 		adj[b].push_front(a);
 	}
+	for(i=1;i<=n;i++)
+		adj[i].sort();
 }
 
 
@@ -49,8 +52,8 @@ void greedy()
 	int minS;
 	int s;
 	int total;
+	int ma[maxN] = {0};
 	int ar[maxN] = {0};
-	int aa[maxN] = {0};
 	list<int>::iterator it,it2,nextc;
 	
 	for(it2 = adj[c2].begin(); it2 != adj[c2].end(); it2 ++)
@@ -61,6 +64,7 @@ void greedy()
 	while(!wcs.empty())
 	{
 		minS = 0x7fffffff;
+		memset(ma,0x7f,sizeof(ma));
 		for(it = wcs.begin(); it != wcs.end(); it ++)
 		{
 			s = -1;
@@ -70,6 +74,7 @@ void greedy()
 				if(!v[*it2] && !inw[*it2])
 				{
 					s ++;
+					ar[s] = *it2;
 				}
 			}
 			if(s < minS)
@@ -79,8 +84,21 @@ void greedy()
 			}
 			else if(s == minS)
 			{
-				minS = s;
-				nextc = it;// 加入答案最小 
+				int t = 0;
+				for(i = 0; i <= s ; i ++)
+					if(ma[i] > ar[i])
+					{
+						t = 1;
+						break;
+					}
+					else if(ma[i] < ar[i])
+						break;
+				if(t)
+				{
+					for(i = 0; i <= s ; i ++)
+						ma[i] = ar[i];
+					nextc = it;// 加入答案最小 
+				}
 			}
 		}
 		//fout << endl;
@@ -97,6 +115,13 @@ void greedy()
 		v[*nextc] = 1;
 		inw[*nextc] = 0;
 		total += minS;
+		if(total == 3)
+		{
+			for(i = 1; i <= n; i ++)
+				if(inw[i])
+					fout << i << ' ';
+			fout << endl;
+		}
 		if(total < ans)
 		{
 			ansl.clear();
@@ -145,66 +170,3 @@ int main()
 		fout << endl;
 	}
 }
-/*
-int bfs()
-{
-	int i,now,s;
-	int op,cl;
-	s = 0;
-	op = 0;
-	cl = 1;
-	q[op] = c1;
-	tb[op] = -1;
-	do
-	{
-		now = q[op ++];
-		if(now == c2)
-		{
-			break;
-		}
-		for(i = 1; i <= n; i ++)
-		{
-			if(map[now][i] && !v[i] && vl[now][i] >= 0)
-			{
-				tb[cl] = op;
-				q[cl ++] = i;
-				v[i] = 1;
-			}
-		}
-		s ++;
-	}while(op < cl);
-	
-	if(now == c2)
-	{
-		while(tb[op] >= 0)
-		{
-			vl[q[tb[op]]][q[op]] = -1;
-			vl[q[op]][q[tb[op]]] = 1;
-			op = tb[op];
-		}
-		return s;
-	}
-	else
-	{
-		return -1;
-	}
-}
-
-int maxflow()
-{
-	int i;
-	i = 0;
-	while(bfs() >= 0) i ++;
-	return 0;
-}
-
-int main()
-{
-	int i,j;
-	init();
-	
-	maxflow();
-	
-	return 0;
-    
-}*/
