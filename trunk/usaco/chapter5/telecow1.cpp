@@ -71,13 +71,15 @@ int bfs()
                 {
                         if(map[now][i] && !v[i] && vl[now][i] >= 0)
                         {
-                                tb[cl] = op;
+                                tb[cl] = op - 1;
                                 q[cl ++] = i;
                                 v[i] = 1;
                         }
                 }
                 s ++;
         }while(op < cl);
+        
+        op --;
         
         if(now == c2 * 2 - 1)
         {
@@ -86,7 +88,9 @@ int bfs()
                         vl[q[tb[op]]][q[op]] = -1;
                         vl[q[op]][q[tb[op]]] = 1;
                         op = tb[op];
+                		fout << op << ' ' ;
                 }
+        fout << endl;
                 return s;
         }
         else
@@ -97,32 +101,33 @@ int bfs()
  
 int maxflow()
 {
-        int i, s;
-        i = 0;
-        s = 0;
-        while(bfs() >= 0) i ++;
-		fout << i << endl;
+	int i, s;
+	i = 0;
+	s = 0;
+	while(bfs() >= 0)
+	{
+		memset(v,0,sizeof(v));
+		i ++;
+	}
+	fout << i << endl;
 		
-		int ans[maxN],ansN = 0;
-		for(i=1;i<=n;i++)
-			if(v[i * 2 - 1] && !v[i * 2])
-				ans[ansN ++] = i;
+	int ans[maxN],ansN = 0;
+	for(i=1;i<=n;i++)
+		if(v[i * 2 - 1] && !v[i * 2])
+			ans[ansN ++] = i;
 		
-		for(i = 0; i < ansN - 1; i ++)
-			fout << ans[i] << ' ';
-		if(ansN >= 1)
-			fout << ans[ansN - 1] << endl;
-        return 0;
+	for(i = 0; i < ansN - 1; i ++)
+		fout << ans[i] << ' ';
+	if(ansN >= 1)
+		fout << ans[ansN - 1] << endl;
+	return 0;
 }
  
 int main()
 {
         int i,j;
         init();
-        
         maxflow();
-        
-        
         return 0;
     
 }
