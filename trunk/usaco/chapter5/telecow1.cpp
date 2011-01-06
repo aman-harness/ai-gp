@@ -113,8 +113,15 @@ int maxflow()
 		
 	int ans[maxN],ansN = 0;
 	for(i=1;i<=n;i++)
-		if(v[i * 2 - 1] && !v[i * 2])
-			ans[ansN ++] = i;
+	{
+		if(v[i * 2])
+		for(int j = 1; j <= n * 2; j ++)
+			if(map[i * 2][j] && !v[j])
+			{
+				ans[ansN ++] = i;
+				break;
+			}
+	}
 		
 	for(i = 0; i < ansN - 1; i ++)
 		fout << ans[i] << ' ';
