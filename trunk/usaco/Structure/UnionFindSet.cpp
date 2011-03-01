@@ -1,48 +1,47 @@
-#include <iostream>
-using namespace std;
+/*************************************************
+Copyright:      No.8 Lightning Man Workgroup
+Author:         Alchemist
+Date    :       2011-02-21
+Description:    Union Find Set
+*************************************************/
+#include "UnionFindSet.h"
 
-class UFSet
+UFSet::UFSet(int maxn)
 {
-public:
-    int p*;
-    int rank*;
-    int length;
+    p = new int[maxn];
+    rank = new int[maxn];
+    length = maxn;
+    for(int i = 0; i < length; i ++)
+        makeSet(i);
+}
 
-    UFSet(int maxn)
-    {
-        int p* = new int[maxn];
-        int rank* = new int[maxn];
-        length = maxn;
-    }
+int UFSet::findSet(int x)
+{
+    if (p[x] != x)
+        p[x] = findSet(p[x]);
+    return p[x];
+}
 
-    int findSet(int x)
-    {
-        while (p[x] != x)
-            p[x] = findSet(p[x]);
-        return p[x];
-    }
+void UFSet::combine(int x, int y)
+{
+    link(findSet(x), findSet(y));
+}
 
-    void Union(int x, int y)
-    {
-        link(findSet(x), findSet(y));
-    }
+void UFSet::makeSet(int x)
+{
+    p[x] = x;
+    rank[x] = 0;
+}
 
-private:
-    void makeSet(int x)
+void UFSet::link(int x, int y)
+{
+    if (rank[x] > rank[y])
+        p[y] = x;
+    else
     {
-        p[x] = x;
-        rank[x] = 0;
-    }
-
-    void link(int x, int y)
-    {
-        if (rank[x] > rank[y])
-            p[y] = x;
-        else
-        {
-            p[x] = y;
-            if(rank[x] == rank[y])
-                rank[y] ++;
-        }
+        p[x] = y;
+        if(rank[x] == rank[y])
+            rank[y] ++;
     }
 }
+
