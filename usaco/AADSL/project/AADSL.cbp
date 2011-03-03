@@ -35,9 +35,9 @@
 			</Target>
 		</Build>
 		<Unit filename="..\Structure\HeapTree.cpp" />
+		<Unit filename="..\Structure\HeapTree.h" />
 		<Unit filename="..\Structure\UnionFindSet.cpp" />
-		<Unit filename="..\include\HeapTree.h" />
-		<Unit filename="..\include\UnionFindSet.h" />
+		<Unit filename="..\Structure\UnionFindSet.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />
