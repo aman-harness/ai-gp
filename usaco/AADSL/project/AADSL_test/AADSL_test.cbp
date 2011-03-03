@@ -14,7 +14,12 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-g" />
+					<Add directory="..\..\include" />
 				</Compiler>
+				<Linker>
+					<Add library="..\..\bin\libAADSL.a" />
+					<Add directory="..\..\bin" />
+				</Linker>
 			</Target>
 			<Target title="Release">
 				<Option output="..\..\bin\AADSL_test" prefix_auto="1" extension_auto="1" />
@@ -32,8 +37,10 @@
 		<Compiler>
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
+			<Add directory="..\..\include" />
 		</Compiler>
 		<Linker>
+			<Add library="..\..\bin\libAADSL.a" />
 			<Add directory="..\..\bin" />
 		</Linker>
 		<Unit filename="..\..\Test\main.cpp" />
