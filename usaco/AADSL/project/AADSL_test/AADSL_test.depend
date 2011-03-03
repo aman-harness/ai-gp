@@ -1,0 +1,54 @@
+# depslib dependency file v1.0
+1299154526 source:e:\usaco\aadsl\test\unionfindset_test.cpp
+	<iostream>
+	<cstdlib>
+	"UnionFindSet.h"
+
+1299149398 e:\usaco\aadsl\structure\unionfindset.h
+
+1299157232 source:e:\usaco\aadsl\test\main.cpp
+	<iostream>
+	<HeapTree.h>
+	<UnionFindSet.h>
+
+1299154530 e:\usaco\aadsl\test\heaptree_test.cpp
+	<iostream>
+	<cstdlib>
+	"HeapTree.h"
+
+1299150944 e:\usaco\aadsl\structure\heaptree.h
+
+1299154526 e:\usaco\aadsl\test\unionfindset_test.cpp
+	<iostream>
+	<cstdlib>
+	"UnionFindSet.h"
+
+1299154530 source:e:\usaco\aadsl\test\heaptree_test.cpp
+	<iostream>
+	<cstdlib>
+	"HeapTree.h"
+
+1299154526 source:e:\usaco\aadsl\test\unionfindset_test.h
+	<iostream>
+	<cstdlib>
+	"UnionFindSet.h"
+
+1299154530 e:\usaco\aadsl\test\heaptree_test.h
+	<iostream>
+	<cstdlib>
+	"HeapTree.h"
+
+1299154526 e:\usaco\aadsl\test\unionfindset_test.h
+	<iostream>
+	<cstdlib>
+	"UnionFindSet.h"
+
+1299154530 source:e:\usaco\aadsl\test\heaptree_test.h
+	<iostream>
+	<cstdlib>
+	"HeapTree.h"
+
+1299150944 e:\usaco\aadsl\include\heaptree.h
+
+1299149398 e:\usaco\aadsl\include\unionfindset.h
+

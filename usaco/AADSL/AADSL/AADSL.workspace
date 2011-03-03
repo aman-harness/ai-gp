@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_workspace_file>
+	<Workspace title="Workspace">
+		<Project filename="project/AADSL.cbp" />
+		<Project filename="project/AADSL_test/AADSL_test.cbp" active="1">
+			<Depends filename="project/AADSL.cbp" />
+		</Project>
+	</Workspace>
+</CodeBlocks_workspace_file>
