@@ -19,7 +19,7 @@ Difficulty: ***
 #include <map>
 #include <set>
 #include <deque>
-#include <math.h>
+#include <cmath>
 
 #define fo(a,b,c) for( a = ( b ); a < ( c ); ++ a )
 #define fr(a,b) fo( a, 0, ( b ) )
@@ -91,10 +91,12 @@ bool visible(point p, point o)
         }
         fo(i, l, r)
         {
-            newy = (0.5 + i - x1)*ys + y1;
-            newz = (0.5 + i - x1)*zs + z1;
+            newy = (1 + i - x1)*ys + y1;
+            newz = (1 + i - x1)*zs + z1;
             if(!((f[i][int(newy)] <= newz && f[i+1][int(newy)] <= newz) || newy == double(int(newy))))
             {
+                //cout << o.x << ' ' << o.y << endl;
+                //cout << i << ' ' << newy << ' ' << newz << endl;
                 return 0;
             }
         }
@@ -118,8 +120,8 @@ bool visible(point p, point o)
         }
         fo(i, l, r)
         {
-            newx = (0.5 + i - y1) * xs + x1;
-            newz = (0.5 + i - y1) * zs + z1;
+            newx = (1 + i - y1) * xs + x1;
+            newz = (1 + i - y1) * zs + z1;
             if(!((f[int(newx)][i] <= newz && f[int(newx)][i+1] <= newz) || newx == double(int(newx))))
             {
                 return 0;
@@ -159,7 +161,7 @@ void bfs()
             q[qe].y = -1;
             qs ++;
         }
-        cout << q[qs].x << ' ' << q[qs].y << endl;
+        //cout << q[qs].x << ' ' << q[qs].y << endl;
         if(q[qs].x == e.x && q[qs].y == e.y)
         {
             ans = step;
