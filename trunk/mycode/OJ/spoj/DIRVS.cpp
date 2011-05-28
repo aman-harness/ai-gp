@@ -125,8 +125,8 @@ void output()
 
 int main()
 {
-    freopen("DIRVS.in","r");
-    freopen("DIRVS.out","w");
+    freopen("DIRVS.in", "r", stdin);
+    freopen("DIRVS.out", "w", stdout);
     int i,t;
     t = ni();
     fi(t)
