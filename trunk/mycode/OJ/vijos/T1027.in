@@ -1,0 +1,15 @@
+14
+<?xml version="1.0" encoding="T25" ?>
+<program>
+  <begin>
+    <repeat>3</repeat>
+    <begin>
+      <write show=¡±ture¡± >x.</write><write show=¡±true¡± >x</write>
+    </begin>
+  </begin>
+  <begin>
+    <write show=true>.mpsbcju.dpn</write>
+    <write show=false>beijing</write>
+    <write show=¡±true¡±>2008Bj</write>
+  </begin>
+</program>
