@@ -1,0 +1,9 @@
+描述 Description   
+   输入两个自然数，输出他们的和
+
+ 输入格式 Input Format  
+   两个自然数x和y(0<=x,y<=32767)
+
+ 输出格式 Output Format  
+   一个数，即x和y的和
+ 

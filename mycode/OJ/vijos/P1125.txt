@@ -1,0 +1,10 @@
+d =h-5(t^2)
+d
+h-5(t^2)-l<0
+h-5(t^2)>0
+i>s-t*v
+i<s-t*v+k
+t>(s-i)/v;
+t<(s+k-i)/v
+sqrt(h/5)>t>(s-i)/v
+sqrt((h-l)/5)<t<(s+k-i)/v
