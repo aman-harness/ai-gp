@@ -51,7 +51,8 @@ struct point
     int x, y;
 }s,e;
 
-const int maxn = 200;
+const double INF = 0.0000001;
+const int maxn = 201;
 const point dir[4] = {0,1,1,0,-1,0,0,-1};
 
 int f[maxn][maxn] = {0};
@@ -93,7 +94,23 @@ bool visible(point p, point o)
         {
             newy = (1 + i - x1)*ys + y1;
             newz = (1 + i - x1)*zs + z1;
-            if(!((f[i][int(newy)] <= newz && f[i+1][int(newy)] <= newz) || newy == double(int(newy))))
+            if(newy == double(int(newy)))
+            {
+                //newy = (.9 + i - x1)*ys + y1;
+                //newz = (.9 + i - x1)*zs + z1;
+                /*if(p.x == 1 && p.y == 1)
+                {
+                    cout << .9 + i << ' ' << newy << ' ' << newz << endl;
+                    cout << f[i][int(newy)] << endl;
+                }*/
+                if(f[i][int((.9 + i - x1)*ys + y1)] > (.9 + i - x1)*zs + z1 || f[i + 1][int((1.1 + i - x1)*ys + y1)] > (1.1 + i - x1)*zs + z1)
+                {
+                    //cout << o.x << ' ' << o.y << endl;
+                    //cout << i << ' ' << newx << ' ' << newz << endl;
+                    return 0;
+                }
+            }
+            else if(!(f[i][int(newy)] <= newz && f[i+1][int(newy)] <= newz))
             {
                 //cout << o.x << ' ' << o.y << endl;
                 //cout << i << ' ' << newy << ' ' << newz << endl;
@@ -122,17 +139,38 @@ bool visible(point p, point o)
         {
             newx = (1 + i - y1) * xs + x1;
             newz = (1 + i - y1) * zs + z1;
-            if(!((f[int(newx)][i] <= newz && f[int(newx)][i+1] <= newz) || newx == double(int(newx))))
+            if(abs(newx - double(int(newx))) < INF)
             {
+                //newx = (.9 + i - y1) * xs + x1;
+                //newz = (.9 + i - y1) * zs + z1;
+                /*if(p.x == 1 && p.y == 1)
+                {
+                    cout << newx << ' ' << .9 + i << ' ' << newz << endl;
+                    cout << f[int(newx)][i] << endl;
+                }*/
+                if(f[int((.9 + i - y1) * xs + x1)][i] > (.9 + i - y1) * zs + z1 || f[int((1.1 + i - y1) * xs + x1)][i+1] > (1.1 + i - y1) * zs + z1)
+                {
+                    //cout << o.x << ' ' << o.y << endl;
+                    //cout << i << ' ' << newx << ' ' << newz << endl;
+                    return 0;
+                }
+            }
+            else if(!(f[int(newx)][i] <= newz && f[int(newx)][i+1] <= newz))
+            {
+                //cout << o.x << ' ' << o.y << endl;
+                //cout << i << ' ' << newx << ' ' << newz << endl;
                 return 0;
             }
         }
     }
+    //cout << "y";
     return 1;
 }
 
 bool visible(point p)
 {
+    //cout << p.x << ' ' << p.y << endl;
+    //cout << "v:" << visible(p,s) << ' ' << visible(p,e) << endl;
     if(visible(p, s) || visible(p, e))
         return true;
     else
@@ -151,6 +189,7 @@ void bfs()
     q[qs] = s;
     q[qe].x = -1;
     q[qe].y = -1;
+    vis[s.x][s.y] = true;
     step = 0;
     do
     {
