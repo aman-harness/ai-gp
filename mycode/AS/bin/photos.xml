@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<data>
+	<photo is3d="true" name="test1" width="200" height="100">photos/1.jpg</photo>
+	<photo is3d="false" name="test2" width="200" height="150">photos/2.jpg</photo>
+	<photo is3d="false" name="test3" width="200" height="150">photos/2.jpg</photo>
+	<photo is3d="false" name="test4" width="200" height="150">photos/2.jpg</photo>
+	<photo is3d="false" name="test5" width="200" height="150">photos/2.jpg</photo>
+	<photo is3d="false" name="test6" width="200" height="150">photos/2.jpg</photo>
+	<photo is3d="false" name="test7" width="200" height="150">photos/2.jpg</photo>
+	<photo is3d="false" name="test8" width="200" height="150">photos/2.jpg</photo>
+	<photo is3d="false" name="test9" width="200" height="150">photos/2.jpg</photo>
+	<photo is3d="false" name="test10" width="200" height="150">photos/2.jpg</photo>
+	<photo is3d="false" name="test11" width="200" height="150">photos/2.jpg</photo>
+	<photo is3d="false" name="test12" width="200" height="150">photos/2.jpg</photo>
+</data>
