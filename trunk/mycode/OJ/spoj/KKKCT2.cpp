@@ -1,10 +1,10 @@
 /*
-Problem:    5464. Counting triangles
+Problem:    6408. Counting Triangles 2
 Judge:      spoj
 Author:     Alchemist
-Data:       2011/6/12
+Data:       2011/7/2
 Category:   Math
-Difficulty: ***
+Difficulty: ****
 */
 #define _CRT_SECURE_NO_DEPRECATE
 
@@ -46,15 +46,15 @@ typedef map<string,int> msi;
 
 /* main */
 const int maxn = 10000 + 1,seg = 100 + 1;
-unsigned long long f[seg][seg] = {0}, fx[seg][maxn] = {0}, fy[seg][maxn] = {0};
-unsigned long long ans[seg][seg] = {0}, ansx[seg][maxn] = {0}, ansy[seg][maxn] = {0};
+unsigned long long f[seg][seg] = {0}, fx[seg][maxn] = {0}, fy[maxn][seg] = {0};
+unsigned long long ans[seg][seg] = {0}, ansx[seg][maxn] = {0}, ansy[maxn][seg] = {0};
 int x ,y;
 
 void init()
 {
-    int i,j,k,l,x,y;
+    int i,j,k,l,kk,ll,x,y;
     int im;
-    im = (maxn - 1)/(seg - 1) + 1;
+    im = (maxn - 1)/(seg - 1);
     fo(i,0,im)
     fo(j,0,im)
     {
@@ -68,13 +68,17 @@ void init()
         fo(k,1,seg)
         fo(l,1,seg)
         {
+            kk = i*(seg-1) + k;
+            ll = j*(seg-1) + l;
             f[k][l] = f[k-1][l] + f[k][l-1] - f[k-1][l-1];
-            if(k * 2 == l || l * 2 == k)
+            if(kk * 2 == ll || ll * 2 == kk)
                 f[k][l] += 2;
-            else if(!(k * 2 < l || l * 2 < k))
+            else if(!(kk * 2 < ll || ll * 2 < kk))
                 f[k][l] += 4;
             ans[k][l] = ans[k-1][l] + ans[k][l-1] - ans[k-1][l-1] + f[k][l];
+            //cout << k << ' ' << l << ' ' << ans[k][l] << endl;
         }
+        //while(1);
         fo(k,0,seg)
         {
             fx[i+1][j*(seg-1)+k] = f[seg-1][k];
@@ -85,17 +89,49 @@ void init()
     }
 }
 
+unsigned long long calc(int x,int y)
+{
+    int i,j,k,l,kk,ll;
+    i = x / (seg - 1);
+    j = y / (seg - 1);
+    if(x == 10000 && y == 10000)
+        return ansx[i][j*(seg-1)];
+    fo(k,0,seg)
+    {
+        f[0][k] = fx[i][j*(seg-1)+k];
+        f[k][0] = fy[i*(seg-1)+k][j];
+        ans[0][k] = ansx[i][j*(seg-1)+k];
+        ans[k][0] = ansy[i*(seg-1)+k][j];
+    }
+    int xn,yn;
+    xn = x%(seg - 1) + 1;
+    yn = y%(seg - 1) + 1;
+    fo(k,1,xn)
+    fo(l,1,yn)
+    {
+        kk = i * (seg - 1) + k;
+        ll = j * (seg - 1) + l;
+        f[k][l] = f[k - 1][l] + f[k][l - 1] - f[k - 1][l - 1];
+        if(kk * 2 == ll || ll * 2 == kk)
+            f[k][l] += 2;
+        else if(!(kk * 2 < ll || ll * 2 < kk))
+            f[k][l] += 4;
+        ans[k][l] = ans[k - 1][l] + ans[k][l - 1] - ans[k - 1][l - 1] + f[k][l];
+    }
+    return ans[x%(seg - 1)][y%(seg - 1)];
+}
+
 int main()
 {
-    //freopen("CT.in", "r", stdin);
-    //freopen("CT.out", "w", stdout);
+    //freopen("KKKCT2.in", "r", stdin);
+    //freopen("KKKCT2.out", "w", stdout);
     int i,t;
     init();
     t = ni();
     fi(t)
     {
         cin >> x >> y;
-        cout << ans[x][y] << endl;
+        cout << calc(x,y) << endl;
     }
 }
 
