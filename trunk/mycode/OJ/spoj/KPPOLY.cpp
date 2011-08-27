@@ -1,11 +1,10 @@
 /*
-Problem:    115. Family
+Problem:    1431. Projections Of A Polygon
 Judge:      spoj
 Author:     Alchemist
-Date:       2011/8/14
-Category:   SEARCH
-Difficulty: **
-Desc:       It's just like the game Sokoban.
+Data:       2011/7/20
+Category:   MATH
+Difficulty: ***
 */
 #define _CRT_SECURE_NO_DEPRECATE
 
@@ -82,8 +81,8 @@ void expand(int n, int h, int m)
 
 int main()
 {
-    //freopen("FAMILY.in", "r", stdin);
-    //freopen("FAMILY.out", "w", stdout);
+    //freopen("HANOI07.in", "r", stdin);
+    //freopen("HANOI07.out", "w", stdout);
     int i, t;
     cin >> t;
     _(f,0xff);
