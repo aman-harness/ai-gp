@@ -45,6 +45,7 @@
 			<Add library="..\..\bin\libAADSL.a" />
 			<Add directory="..\..\bin" />
 		</Linker>
+		<Unit filename="..\..\Structure\Graph.h" />
 		<Unit filename="..\..\Test\main.cpp" />
 		<Extensions>
 			<code_completion />
