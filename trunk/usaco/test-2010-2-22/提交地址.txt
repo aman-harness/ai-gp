@@ -1,4 +1,0 @@
-graph: http://acm.hdu.edu.cn/showproblem.php?pid=3416
-matrix: http://acmicpc-live-archive.uva.es/nuevoportal/data/problem.php?p=4858
-robot: http://acmicpc-live-archive.uva.es/nuevoportal/data/problem.php?p=4834
-ring: http://acm.hdu.edu.cn/showproblem.php?pid=3415
