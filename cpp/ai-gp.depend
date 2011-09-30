@@ -1,0 +1,30 @@
+# depslib dependency file v1.0
+1317399984 source:e:\develop\cpp\ai-gp\main.cpp
+	<iostream>
+	<fstream>
+	<cstdio>
+	<cstdlib>
+	<cmath>
+	<ctime>
+	<cstring>
+	<string>
+	<vector>
+	<map>
+	"geometry.h"
+
+1317298480 source:e:\szh\ai-gp\main.cpp
+	<iostream>
+	<cstdio>
+	<cstdlib>
+	<cmath>
+	<cstring>
+	<vector>
+	<map>
+
+1317394969 e:\develop\cpp\ai-gp\geometry.h
+	<string>
+	<vector>
+
+1317394130 source:e:\develop\cpp\ai-gp\geometry.cpp
+	"geometry.h"
+
