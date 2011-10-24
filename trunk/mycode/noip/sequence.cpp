@@ -8,41 +8,42 @@ const int maxn = 1000 + 1;
 struct E
 {
     int u,v,w;
-}edge[maxn] = {0};
+}edge[maxn * 3] = {0};
 int d[maxn] = {0};
-int p[maxn] = {0};
+//int p[maxn] = {0};
 int n,en = 0;
-const int INF = 07fffffff;
+const int INF = 0x7fffffff;
 
 int bellman_ford(int s)
 {
-    for(int i = 0; i <= 1000; i ++)
-    {
+    for(int i = 0; i <= maxn - 1; i ++)
         d[i] = INF;
-        p[i] = -1;
-    }
+        //p[i] = -1;
     d[s] = 0;
     int u,v;
-    for(int i = 0; i <= 1000; i ++)
+    for(int i = 0; i <= maxn - 1; i ++)
     {
         for(int j = 0; j < en ; j++)
         {
             u = edge[j].u;
+            if(d[u] == INF)
+                continue;
             v = edge[j].v;
             if(d[u] + edge[j].w < d[v])
             {
                 d[v] = d[u] + edge[j].w;
-                p[v] = u;
+                //cout << v << ' ' << d[v] << endl;
             }
+                //p[v] = u;
         }
     }
 
     for(int i = 0; i < en; i ++)
     {
-        u = edge[j].u;
-        v = edge[j].v;
-        if(d[u] + edge[j].w < d[v])
-            return -1;
+        u = edge[i].u;
+        v = edge[i].v;
+        if(d[u] + edge[i].w < d[v])
+            return 1;
     }
     return d[0];
     /*procedure BellmanFord(list vertices, list edges, vertex source)
@@ -78,15 +79,16 @@ void init()
 {
     int a,b,c;
     cin >> n;
+    en = 0;
     for(int i = 0; i < n; i++)
     {
         cin >> a >> b >> c;
-        edge[en].u = a - 1;
-        edge[en].v = b;
+        edge[en].u = b;
+        edge[en].v = a - 1;
         edge[en ++].w = -c;
     }
 
-    for(int i = 0; i < n; i++)
+    for(int i = 0; i < maxn - 1; i++)
     {
         edge[en].u = i;
         edge[en].v = i + 1;
@@ -104,6 +106,6 @@ int main()
     freopen("sequence.out","w",stdout);
     int i,j;
     init();
-    cout << bellman_ford(n) << endl;
+    cout << -bellman_ford(maxn - 1) << endl;
     return 0;
 }
