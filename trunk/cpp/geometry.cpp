@@ -1,4 +1,10 @@
-using namespace std;
+/*****************************************
+* Title:        Solid Geometry Artificial Intelligence
+* Anthor:       Alchemist
+* Date:         2011.9.21
+* File:         geometry.cpp
+* Description:
+******************************************/
 #include "geometry.h"
 
 namespace n8lm

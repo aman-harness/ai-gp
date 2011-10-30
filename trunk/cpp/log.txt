@@ -15,3 +15,49 @@ Lcd // Lef
 Lef // Lgh
 Confirmation:
 Lab // Lgh
+The current date/time is: Sat Oct 01 15:12:29 2011
+
+Conditions:
+Lab // Lcd
+Lcd // Lef
+Lef // Lgh
+Confirmation:
+Lab // Lgh
+
+The current date/time is: Sun Oct 02 21:56:31 2011
+
+The current date/time is: Sun Oct 02 21:58:38 2011
+
+Conditions:
+The current date/time is: Sun Oct 02 22:00:44 2011
+
+The current date/time is: Sun Oct 02 22:00:53 2011
+
+Conditions:
+The current date/time is: Sun Oct 02 22:01:59 2011
+
+The current date/time is: Sun Oct 02 22:02:02 2011
+
+Conditions:
+Confirmation:
+The current date/time is: Sun Oct 02 22:02:31 2011
+
+Conditions:
+The current date/time is: Sun Oct 02 22:03:36 2011
+
+Conditions:
+Confirmation:
+The current date/time is: Sun Oct 02 22:05:54 2011
+
+The current date/time is: Sun Oct 02 22:05:57 2011
+
+The current date/time is: Sun Oct 02 22:06:01 2011
+
+Conditions:
+The current date/time is: Sun Oct 02 22:06:31 2011
+
+The current date/time is: Sun Oct 02 22:06:39 2011
+
+Conditions:
+Lab // Lcd
+Confirmation:

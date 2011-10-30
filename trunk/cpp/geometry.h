@@ -1,9 +1,9 @@
 /*****************************************
-* Title: Solid Geometry
-* Created by Alchemist
-* Date: 2011.9.21
-*
-*
+* Title:        Solid Geometry Artificial Intelligence
+* Anthor:       Alchemist
+* Date:         2011.9.21
+* File:         geometry.h
+* Description:
 ******************************************/
 #ifndef _N8LM_GEO_
 #define _N8LM_GEO_
