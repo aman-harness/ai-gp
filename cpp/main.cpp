@@ -1,9 +1,9 @@
 /*****************************************
-* Title: Solid Geometry Artificial Intelligence
-* Created by Alchemist
-* Date: 2011.9.30
-*
-*
+* Title:        Solid Geometry Artificial Intelligence
+* Anthor:       Alchemist
+* Date:         2011.9.30
+* File:         main.cpp
+* Description:
 ******************************************/
 
 #include <iostream>
@@ -25,6 +25,16 @@ using namespace n8lm;
 vector<Point> points;
 vector<Line> lines;
 vector<Plane> planes;
+
+int GetPointByName(string str)
+{
+    for(int i = 1; i < Point::pLastId; i ++)
+    {
+        if(str == points[i].GetName())
+            return points[i].GetId();
+    }
+    return 0;
+}
 
 int GetLineByName(string str)
 {
@@ -190,14 +200,10 @@ bool isEnd()
     return 0;
 }
 
-void input()
+void init_p(int pn)
 {
     int i, j, k;
-    string str, a, b;
-    int la,lb;
 
-    cout << "Please input the amount of points." << endl;
-    cin >> pn;
     string name;
 
     name = "Pa";
@@ -240,15 +246,29 @@ void input()
         map_p3[k][j][i] = pl.GetId();
     }
 
+}
+
+void input()
+{
+    int i, j, k;
+    string str, a, b;
+    int la,lb;
+
+    cout << "Please input the amount of points." << endl;
+    cin >> pn;
+    init_p(pn);
     cout << "Please input the conditions" << endl;
     logfile << "Conditions:" << endl;
+
+    int cn;
+    int p[maxn],pn;
     while(1)
     {
         cin >> str;
         if(str == "//")
         {
+            cout << "Please input the name of the line A and B." << endl;
             cin >> a >> b;
-
             la = GetLineByName(a);
             lb = GetLineByName(b);
             if(la > 0 && lb > 0)
@@ -258,9 +278,34 @@ void input()
                 logfile << lines[la].GetName() << " // " << lines[lb].GetName() << endl;
             }
         }
+        else if(str == "coline")
+        {
+            cout << "Please input the name of the points. \"end\" means end up the input of the points." << endl;
+            pn = 0;
+            do
+            {
+                cin >> a;
+                p[pn] = GetPointByName(a);
+                if(p[pn] > 0)
+                    pn ++;
+            }while(a != "end");
+            if(pn >= 3)
+            {
+                for(i = 0; i < pn; i ++)
+                    cout << points[p[i]].GetName() << ',';
+                cout << "are collinar." << endl;
+                for(i = 2; i < pn; i ++)
+                    lines[map_p2[p[0]][p[1]]].Add(points[p[i]]);
+            }
+            else
+            {
+                cout << "Fail! Less than 3 available points." << endl;
+            }
+        }
         else if(str == "help")
         {
             cout << "// : parallel" << endl;
+            cout << "coline : given points are collinar" << endl;
             cout << "end : end up the input" << endl;
             cout << "quit : end up the input" << endl;
         }
